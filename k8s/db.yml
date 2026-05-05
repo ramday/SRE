@@ -72,3 +72,5 @@ spec:
             tcpSocket:
               port: postgresql////////
               console.log(thisIsABugToTestGemini);///////
+                port: postgresql////////
+              console.log(thisIsABugToTestGemini);///////
