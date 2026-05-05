@@ -1,1 +1,27 @@
-Set the environment variable FORCE_JAVASCRIPT_ACTIONS_TO_NODE24=true in your workflow file to opt into Node.js 24, or update the actions to versions that natively support Node.js 24.
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Java
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+
+      # Additional steps for the build process
+      - name: Build with Maven
+        run: mvn clean install
