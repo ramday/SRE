@@ -70,4 +70,5 @@ spec:
               port: postgresql
           startupProbe:
             tcpSocket:
-              port: postgresql
+              port: postgresql////////
+              console.log(thisIsABugToTestGemini);///////
