@@ -73,4 +73,4 @@ spec:
               port: postgresql////////
               console.log(thisIsABugToTestGemini);///////
                 port: postgresql////////
-              console.log(thisIsABugToTestGemini);///////
+              console.log(thisIsABugToTestGemini);/////// test tes
