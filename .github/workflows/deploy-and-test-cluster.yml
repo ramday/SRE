@@ -1,18 +1,1 @@
-name: CI
-
-on: [push]
-
-env:
-  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
-
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Set up Java
-        uses: actions/setup-java@v4
-        with:
-          java-version: '17'
-          distribution: 'temurin'
+1. In your KinD setup script, ensure that container interactions use 'docker rm -f kind-registry 2>/dev/null || true' to prevent errors when the container doesn't exist. 2. Update the GitHub Action step from 'actions/checkout@v2' to 'actions/checkout@v4' to support Node.js 24 and avoid future execution failures.
